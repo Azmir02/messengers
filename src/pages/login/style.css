@@ -1,0 +1,106 @@
+.login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
+}
+.login__shadow {
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+h1.login__title {
+  font-family: var(--primary-font);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--title-color);
+  padding-bottom: 28px;
+}
+.google__signin__btn button {
+  font-family: var(--primary-font);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--title-color);
+  padding: 10px 12px;
+}
+.login form {
+  margin-top: 28px;
+}
+.login__form {
+  padding: 42px;
+}
+.login__btn {
+  margin-top: 28px;
+}
+.login__btn button {
+  font-family: var(--primary-font) !important;
+  padding: 14px 0;
+  background: var(--primary-color) !important;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50px;
+}
+p.signup__text {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 35px;
+}
+p.signup__text a {
+  font-weight: 600;
+  color: var(--orange-color);
+}
+p.login__error {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--orange-color);
+}
+.password__field {
+  display: flex;
+  position: relative;
+}
+.password__field input {
+  position: relative;
+  padding-right: 60px;
+}
+.password__field button {
+  position: absolute;
+  top: 30%;
+  right: 5px;
+}
+.forgot__pass {
+  margin-top: 20px;
+  cursor: pointer;
+  color: var(--orange-color);
+  text-align: center;
+  transition: all 0.3s linear;
+}
+.forgot__pass:hover {
+  color: var(--primary-color);
+}
+.signIn__methods {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.signIn__methods button {
+  margin: 0 10px;
+}
+.signIn__methods__container {
+  /* box-shadow: var(--shadow); */
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 8px;
+}
+.signin__methods__title {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-bottom: 8px;
+}

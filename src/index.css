@@ -1,0 +1,31 @@
+:root {
+  --primary-font: "Nunito", sans-serif;
+  --primary-color: #5f35f5;
+  --bg-color: #fcfcfc;
+  --title-color: #03014c;
+  --black-color: #333;
+  --subtitle-color: #8a8a8a;
+  --orange-color: #ea6c00;
+  --active-color: #00ff75;
+  --shadow: 2px 2px 8px #bbb, -2px -2px 8px #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-height: 0.8;
+}

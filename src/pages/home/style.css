@@ -1,0 +1,45 @@
+.users__container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user__item h1 {
+  font-family: var(--primary-font);
+  font-size: 42px;
+  font-weight: 800;
+  padding-bottom: 20px;
+  color: var(--primary-color);
+}
+.user__item {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+.user__img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.user__info {
+  text-align: center;
+}
+.user__name {
+  font-family: var(--primary-font);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black-color);
+  padding-bottom: 10px;
+}
+.user__email {
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black-color);
+}

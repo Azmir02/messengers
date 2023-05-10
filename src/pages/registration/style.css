@@ -1,0 +1,73 @@
+.sign__up {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
+}
+.signup__shadow {
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+h1.signup__title {
+  font-family: var(--primary-font);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--title-color);
+  padding-bottom: 13px;
+}
+h4.signup__subtitle {
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--subtitle-color);
+}
+.sign__up form {
+  margin-top: 28px;
+}
+.signup__form {
+  padding: 42px;
+}
+.reg__btn {
+  margin-top: 28px;
+}
+.reg__btn button {
+  font-family: var(--primary-font) !important;
+  padding: 14px 0;
+  background: var(--primary-color) !important;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50px;
+}
+p.signin__text {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-top: 35px;
+}
+p.signin__text a {
+  font-weight: 600;
+  color: var(--orange-color);
+}
+p.signup__error {
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--orange-color);
+}
+.password__field {
+  display: flex;
+  position: relative;
+}
+.password__field input {
+  position: relative;
+  padding-right: 60px;
+}
+.password__field button {
+  position: absolute;
+  top: 30%;
+  right: 5px;
+}
