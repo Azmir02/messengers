@@ -24,9 +24,9 @@ import { useDispatch } from "react-redux";
 import { Loginusers } from "../../feature/Slice/LoginSlice";
 
 const Forms = () => {
+  const dispatch = useDispatch();
   const [passShow, setPassShow] = useState("password");
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
   const auth = getAuth();
   const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
@@ -60,21 +60,20 @@ const Forms = () => {
       formik.values.password
     )
       .then(({ user }) => {
-        console.log(user);
         if (user.emailVerified === true) {
-          toast.success("account login", {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
           dispatch(Loginusers(user));
           localStorage.setItem("users", JSON.stringify(user));
           navigate("/");
+          // toast.success("account login", {
+          //   position: "top-center",
+          //   autoClose: 3000,
+          //   hideProgressBar: false,
+          //   closeOnClick: true,
+          //   pauseOnHover: true,
+          //   draggable: true,
+          //   progress: undefined,
+          //   theme: "light",
+          // });
           setLoading(false);
         } else {
           toast.error("please verify your email address", {
@@ -263,7 +262,7 @@ const Forms = () => {
           </div>
         </div>
 
-        <form action="" onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
           <TextField
             type="email"
             id="outlined-basic"
