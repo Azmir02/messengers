@@ -21,7 +21,7 @@ import GithubSVG from "../../svg/github";
 import FacebookSVG from "../../svg/facebook";
 import GoogleSVG from "../../svg/google";
 import { useDispatch } from "react-redux";
-import { Loginusers } from "../../feature/Slice/userSlice";
+import { Loginusers } from "../../feature/Slice/LoginSlice";
 
 const Forms = () => {
   const [passShow, setPassShow] = useState("password");
@@ -60,6 +60,7 @@ const Forms = () => {
       formik.values.password
     )
       .then(({ user }) => {
+        console.log(user);
         if (user.emailVerified === true) {
           toast.success("account login", {
             position: "top-center",
