@@ -1,0 +1,9 @@
+.home_pages{
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.home_items{
+    padding: 0 15px !important;
+}
