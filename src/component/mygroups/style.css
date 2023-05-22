@@ -1,6 +1,7 @@
-.grouplist{
+.mygrps{
     width: 100%;
     background-color: white;
+    margin-top: 15px;
     border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
@@ -10,14 +11,14 @@
 }
 
 
-.grouplist_header h2{
+.mygrps_header h2{
     font-family: var(--primary-font);
     font-size: 20px;
     font-weight: 700;
     color: var(--black-color);
 }
 
-.grouplist_searchBoxes{
+.mygrps_searchBoxes{
     display: flex;
     align-items: center;
     background-color: var(--searchbox_bg);
@@ -28,13 +29,13 @@
     width: 80%;
 }
 
-.grouplist_searchBoxes svg{
+.mygrps_searchBoxes svg{
     width: 25px;
     height: 25px;
     margin-right: 15px;
 }
 
-.grouplist_searchBoxes input {
+.mygrps_searchBoxes input {
     border: none;
     outline: none;
     background-color: var(--searchbox_bg);
@@ -44,24 +45,24 @@
     font-size: 14px;
 }
 
-.grouplist_body{
+.mygrps_body{
     margin-top: 30px;
     height: 280px;
     overflow-y: auto;
 }
 
-.grouplist_wrapper {
+.mygrps_wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 15px;
     margin-bottom: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.groupList_img{
+.mygrps_img{
     width: 70px;
     height: 70px;
     background-color: red;
@@ -70,17 +71,17 @@
     border: 1px solid var(--primary-color);
 }
 
-.groupList_img img{
+.mygrps_img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.groupList_titles {
+.mygrps_titles {
     width: 300px;
 }
 
-.groupList_titles h4{
+.mygrps_titles h4{
     font-family: var(--primary-font);
     font-size: 20px;
     font-weight: 700;
@@ -88,9 +89,23 @@
     margin-bottom: 5px;
 }
 
-.groupList_titles span{
+.mygrps_titles span{
     font-family: var(--primary-font);
     font-size: 14px;
     font-weight: 500;
+    color: var(--black-color);
+}
+
+.mygrps_date p{
+    font-family: var(--primary-font);
+    font-size: 16px;
+    color: var(--black-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.mygrps_date span{
+    font-family: var(--primary-font);
+    font-size: 14px;
     color: var(--black-color);
 }

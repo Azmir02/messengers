@@ -2,6 +2,11 @@ import React from "react";
 import "./style.css";
 import Grid from "@mui/material/Grid";
 import Grouplist from "../../component/grouplist";
+import Friendrequst from "../../component/friendrequest";
+import Friends from "../../component/friends";
+import Mygroups from "../../component/mygroups";
+import Userlists from "../../component/userlists";
+import Blockuser from "../../component/blockusers";
 
 const Home = () => {
   return (
@@ -12,13 +17,25 @@ const Home = () => {
             <div>
               <Grouplist />
             </div>
-            <div>Friend Request</div>
+            <div>
+              <Friendrequst />
+            </div>
           </Grid>
           <Grid className="home_items" item xs={4}>
-            2
+            <div>
+              <Friends />
+            </div>
+            <div>
+              <Mygroups />
+            </div>
           </Grid>
           <Grid className="home_items" item xs={4}>
-            3
+            <div>
+              <Userlists />
+            </div>
+            <div>
+              <Blockuser />
+            </div>
           </Grid>
         </Grid>
       </div>

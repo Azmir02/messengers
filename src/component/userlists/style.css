@@ -1,4 +1,4 @@
-.grouplist{
+.userlists{
     width: 100%;
     background-color: white;
     border-radius: 20px;
@@ -10,14 +10,14 @@
 }
 
 
-.grouplist_header h2{
+.userlists_header h2{
     font-family: var(--primary-font);
     font-size: 20px;
     font-weight: 700;
     color: var(--black-color);
 }
 
-.grouplist_searchBoxes{
+.userlists_searchBoxes{
     display: flex;
     align-items: center;
     background-color: var(--searchbox_bg);
@@ -28,13 +28,13 @@
     width: 80%;
 }
 
-.grouplist_searchBoxes svg{
+.userlists_searchBoxes svg{
     width: 25px;
     height: 25px;
     margin-right: 15px;
 }
 
-.grouplist_searchBoxes input {
+.userlists_searchBoxes input {
     border: none;
     outline: none;
     background-color: var(--searchbox_bg);
@@ -44,24 +44,24 @@
     font-size: 14px;
 }
 
-.grouplist_body{
+.userlists_body{
     margin-top: 30px;
     height: 280px;
     overflow-y: auto;
 }
 
-.grouplist_wrapper {
+.userlists_wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 15px;
     margin-bottom: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.groupList_img{
+.userlists_img{
     width: 70px;
     height: 70px;
     background-color: red;
@@ -70,17 +70,17 @@
     border: 1px solid var(--primary-color);
 }
 
-.groupList_img img{
+.userlists_img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.groupList_titles {
-    width: 300px;
+.userlists_titles {
+    width: 270px;
 }
 
-.groupList_titles h4{
+.userlists_titles h4{
     font-family: var(--primary-font);
     font-size: 20px;
     font-weight: 700;
@@ -88,7 +88,7 @@
     margin-bottom: 5px;
 }
 
-.groupList_titles span{
+.userlists_titles span{
     font-family: var(--primary-font);
     font-size: 14px;
     font-weight: 500;
