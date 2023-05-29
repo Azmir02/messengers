@@ -79,6 +79,11 @@ p.login__error {
   text-align: center;
   transition: all 0.3s linear;
 }
+.forgot__pass a {
+  color: var(--orange-color);
+  text-align: center;
+  font-family: var(--primary-font);
+}
 .forgot__pass:hover {
   color: var(--primary-color);
 }

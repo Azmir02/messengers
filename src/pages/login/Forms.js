@@ -317,8 +317,8 @@ const Forms = () => {
             )}
           </div>
 
-          <div className="forgot__pass" onClick={handleForgottenPassword}>
-            forgot your password ?
+          <div className="forgot__pass">
+            <Link to="/forgotpassword">Forgot your password ?</Link>
           </div>
           <p className="signup__text">
             Don't have an account ? <Link to="/signup">Sign Up</Link>

@@ -11,6 +11,7 @@ import Home from "./pages/home";
 import RootLayout from "./component/Rootlayout";
 import Notloggedinuser from "./Privaterouter/Notloggedinuser";
 import Loggedinuser from "./Privaterouter/Loggedinuser";
+import Forgotpassword from "./pages/forgotpassword";
 
 function App() {
   const router = createBrowserRouter(
@@ -24,6 +25,7 @@ function App() {
         <Route element={<Notloggedinuser />}>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/forgotpassword" element={<Forgotpassword />}></Route>
         </Route>
       </Route>
     )

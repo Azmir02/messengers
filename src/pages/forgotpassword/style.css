@@ -1,0 +1,47 @@
+.forgotpass_body{
+    width: 100%;
+    height: 100vh;
+    background-color: #DDDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgotpass_box{
+    width: 500px;
+    padding: 20px 35px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+.forgotpass_box h3{
+    font-family: var(--primary-font);
+    font-size: 20px;
+    color: var(--black);
+}
+.forgotpass_box p{
+    font-family: var(--primary-font);
+    font-size: 14px;
+    color: var(--subtitle-color);
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.email-box{
+    margin-top: 15px;
+}
+
+.email-box input{
+    width: 70%;
+    padding: 15px 25px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: none;font-family: var(--primary-font);
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.email-box button{
+    padding: 15px 25px;
+    margin-top: 15px;
+}
