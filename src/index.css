@@ -8,7 +8,9 @@
   --orange-color: #ea6c00;
   --active-color: #00ff75;
   --shadow: 2px 2px 8px #bbb, -2px -2px 8px #fff;
-  --searchbox_bg: #f6f6f6
+  --searchbox_bg: #f6f6f6;
+  --white: #fff;
+  --circle-clr: #ececec;
 }
 * {
   margin: 0;

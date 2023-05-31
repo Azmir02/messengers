@@ -15,7 +15,7 @@ const Modals = ({ open, setOpen }) => {
         aria-describedby="modal-modal-description"
       >
         <Box className="modals">
-          <Uploadprofile />
+          <Uploadprofile setOpen={setOpen} />
         </Box>
       </Modal>
     </div>

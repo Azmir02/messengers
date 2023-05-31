@@ -36,3 +36,45 @@
     width: 25px;
     height: 25px;
 }
+
+.croper-box {
+    width: 800px;
+    background-color: var(--bg-color);
+    padding: 50px 25px;
+    height: 600px;
+    position: absolute;
+}
+
+.close-box{
+    width: 40px;
+    height: 40px;
+    background-color: var(--circle-clr);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.preview-photo{
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.preview-photo .img-preview{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.upload-btn{
+    margin-top: 20px;
+    text-align: center;
+}
