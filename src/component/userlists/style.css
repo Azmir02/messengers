@@ -94,3 +94,9 @@
     font-weight: 500;
     color: var(--black-color);
 }
+.userlists_join{
+    width: 25%;
+}
+.userlists_join .cancel-req{
+    font-size: 12px;
+}
