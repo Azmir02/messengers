@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 const Userlists = () => {
   const [userLists, setuserLists] = useState([]);
   const [filterUser, setFilterUser] = useState([]);
+  const [frndlist, setFrndlist] = useState([]);
   const [frndReq, setFrndReq] = useState([]);
   const user = useSelector((users) => users.login.loggedIn);
   const db = getDatabase();
@@ -34,6 +35,17 @@ const Userlists = () => {
         frndreqArr.push(item.val().reciverid + item.val().senderid);
       });
       setFrndReq(frndreqArr);
+    });
+  }, []);
+  // show friendlist
+  useEffect(() => {
+    const starCountRef = ref(db, "friends");
+    onValue(starCountRef, (snapshot) => {
+      let frndArr = [];
+      snapshot.forEach((item) => {
+        frndArr.push(item.val().reciverid + item.val().senderid);
+      });
+      setFrndlist(frndArr);
     });
   }, []);
 
@@ -85,7 +97,23 @@ const Userlists = () => {
                   <h4>{item.username}</h4>
                 </div>
                 <div className="userlists_join">
-                  <Button variant="outlined">Add friend</Button>
+                  {frndReq.includes(item.id + user.uid) ||
+                  frndReq.includes(user.uid + item.id) ? (
+                    <Button
+                      variant="outlined"
+                      color="error"
+                      className="cancel-req"
+                    >
+                      Cancel Request
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outlined"
+                      onClick={() => handleSentFrndreq(item)}
+                    >
+                      Add friend
+                    </Button>
+                  )}
                 </div>
               </div>
             ))
@@ -98,8 +126,13 @@ const Userlists = () => {
                   <h4>{item.username}</h4>
                 </div>
                 <div className="userlists_join">
-                  {frndReq.includes(item.id + user.uid) ||
-                  frndReq.includes(user.uid + item.id) ? (
+                  {frndlist.includes(item.id + user.uid) ||
+                  frndlist.includes(user.uid + item.id) ? (
+                    <Button variant="outlined" disabled className="cancel-req">
+                      Friends
+                    </Button>
+                  ) : frndReq.includes(item.id + user.uid) ||
+                    frndReq.includes(user.uid + item.id) ? (
                     <Button
                       variant="outlined"
                       color="error"
