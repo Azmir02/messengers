@@ -25,8 +25,22 @@
     padding: 8px 0;
     justify-content: center;
     border-radius: 50px;
-    margin-top: 20px;
-    width: 80%;
+    width: 70%;
+}
+
+.options{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all linear .3s;
+}
+
+.options:hover{
+    background-color: #e5e5e5;
 }
 
 .mygrps_searchBoxes svg{
@@ -77,6 +91,13 @@
     object-fit: cover;
 }
 
+.mygrps-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .mygrps_titles {
     width: 300px;
 }
@@ -107,5 +128,12 @@
 .mygrps_date span{
     font-family: var(--primary-font);
     font-size: 14px;
+    color: var(--black-color);
+}
+
+.mygrps_titles span{
+    font-family: var(--primary-font);
+    font-size: 14px;
+    font-weight: 500;
     color: var(--black-color);
 }

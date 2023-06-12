@@ -17,6 +17,13 @@
     color: var(--black-color);
 }
 
+.group-serches-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .grouplist_searchBoxes{
     display: flex;
     align-items: center;
@@ -24,8 +31,7 @@
     padding: 8px 0;
     justify-content: center;
     border-radius: 50px;
-    margin-top: 20px;
-    width: 80%;
+    width: 70%;
 }
 
 .grouplist_searchBoxes svg{
@@ -93,4 +99,28 @@
     font-size: 14px;
     font-weight: 500;
     color: var(--black-color);
+}
+
+.group_modals{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px !important;
+    background-color: var(--bg-color);
+    border: none;
+    box-shadow: 24;
+    padding: 20px;
+    outline: none !important;
+}
+
+.group_modals h2{
+    font-family: var(--primary-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--black-color);
+}
+
+.group-creattion-form{
+    margin-top: 30px;
 }
