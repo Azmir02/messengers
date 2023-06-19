@@ -11,9 +11,9 @@ const Sidebaricons = () => {
       <NavLink className="profile_icons" to="/">
         <AiOutlineHome />
       </NavLink>
-      <div className="profile_icons">
+      <NavLink className="profile_icons" to="/message">
         <BiMessageAlt />
-      </div>
+      </NavLink>
       <div className="profile_icons">
         <IoMdNotificationsOutline />
       </div>

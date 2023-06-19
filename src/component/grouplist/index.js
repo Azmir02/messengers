@@ -57,6 +57,19 @@ const Grouplist = () => {
   // 0 + 1 = 1 - jan
   // 0 + 1+1 = 2 - feb
 
+  // join group
+  const handleJoin = (item) => {
+    set(push(ref(db, "groupsjoinrequest")), {
+      groupid: item.id,
+      groupname: item.groupname,
+      grouptag: item.grouptag,
+      adminname: item.adminname,
+      adminid: item.adminid,
+      userid: user.uid,
+      username: user.displayName,
+    });
+  };
+
   return (
     <>
       <div className="grouplist">
@@ -85,7 +98,9 @@ const Grouplist = () => {
                 <span>{item.grouptag}</span>
               </div>
               <div className="groupList_join">
-                <Button variant="outlined">Join</Button>
+                <Button variant="outlined" onClick={() => handleJoin(item)}>
+                  Join
+                </Button>
               </div>
             </div>
           ))}
