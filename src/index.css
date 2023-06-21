@@ -11,6 +11,8 @@
   --searchbox_bg: #f6f6f6;
   --white: #fff;
   --circle-clr: #ececec;
+  --right-msg-clr: #6363FC;
+  --left-msg-clr: #F0F0FF;
 }
 * {
   margin: 0;
