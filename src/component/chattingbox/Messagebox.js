@@ -1,10 +1,51 @@
+import moment from "moment/moment";
 import React from "react";
+import { useSelector } from "react-redux";
 
-const Messagebox = () => {
+const Messagebox = ({ msgList }) => {
+  const activeChat = useSelector((state) => state.active.activeState);
+  const user = useSelector((users) => users.login.loggedIn);
   return (
     <>
       <div className="message-box">
-        <div className="right-chatting">
+        {activeChat?.status == "single"
+          ? msgList.map((item, i) => (
+              <div key={i}>
+                {item.whosendid == user.uid ? (
+                  item.msg ? (
+                    <>
+                      <div className="right-chatting">
+                        <div className="right-msg">
+                          <p>{item.msg}</p>
+                        </div>
+                        <div className="right-chat-date">
+                          <span>
+                            {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                          </span>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    "img"
+                  )
+                ) : (
+                  <>
+                    <div className="left-chatting">
+                      <div className="left-msg">
+                        <p>{item.msg}</p>
+                      </div>
+                      <div className="left-chat-date">
+                        <span>
+                          {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))
+          : "grp"}
+        {/* <div className="right-chatting">
           <div className="right-msg">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -65,7 +106,7 @@ const Messagebox = () => {
           <div className="left-chat-date">
             <span>an hour ago</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
