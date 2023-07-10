@@ -1,6 +1,7 @@
 import moment from "moment/moment";
 import React from "react";
 import { useSelector } from "react-redux";
+import ModalImage from "react-modal-image";
 
 const Messagebox = ({ msgList }) => {
   const activeChat = useSelector((state) => state.active.activeState);
@@ -26,9 +27,19 @@ const Messagebox = ({ msgList }) => {
                       </div>
                     </>
                   ) : (
-                    "img"
+                    <div className="right-chatting">
+                      <div className="right-img-msg">
+                        <ModalImage small={item.img} large={item.img} />
+                      </div>
+                      <div className="right-chat-date">
+                        <span>
+                          {" "}
+                          {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                        </span>
+                      </div>
+                    </div>
                   )
-                ) : (
+                ) : item.msg ? (
                   <>
                     <div className="left-chatting">
                       <div className="left-msg">
@@ -41,6 +52,17 @@ const Messagebox = ({ msgList }) => {
                       </div>
                     </div>
                   </>
+                ) : (
+                  <div className="left-chatting">
+                    <div className="left-img-msg">
+                      <ModalImage small={item.img} large={item.img} />
+                    </div>
+                    <div className="left-chat-date">
+                      <span>
+                        {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                      </span>
+                    </div>
+                  </div>
                 )}
               </div>
             ))
