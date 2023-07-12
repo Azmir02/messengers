@@ -1,17 +1,22 @@
 import moment from "moment/moment";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import ModalImage from "react-modal-image";
 
 const Messagebox = ({ msgList }) => {
   const activeChat = useSelector((state) => state.active.activeState);
   const user = useSelector((users) => users.login.loggedIn);
+  const scrollMsg = useRef(null);
+
+  useEffect(() => {
+    scrollMsg?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [msgList]);
   return (
     <>
       <div className="message-box">
         {activeChat?.status == "single"
           ? msgList.map((item, i) => (
-              <div key={i}>
+              <div key={i} ref={scrollMsg}>
                 {item.whosendid == user.uid ? (
                   item.msg ? (
                     <>
@@ -26,7 +31,7 @@ const Messagebox = ({ msgList }) => {
                         </div>
                       </div>
                     </>
-                  ) : (
+                  ) : item.img ? (
                     <div className="right-chatting">
                       <div className="right-img-msg">
                         <ModalImage small={item.img} large={item.img} />
@@ -36,6 +41,15 @@ const Messagebox = ({ msgList }) => {
                           {" "}
                           {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
                         </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="right-chatting">
+                      <div className="right-audio-msg">
+                        <audio controls src={item.audio}></audio>
+                      </div>
+                      <div className="right-chat-date">
+                        <span>an hour ago</span>
                       </div>
                     </div>
                   )
@@ -52,7 +66,7 @@ const Messagebox = ({ msgList }) => {
                       </div>
                     </div>
                   </>
-                ) : (
+                ) : item.img ? (
                   <div className="left-chatting">
                     <div className="left-img-msg">
                       <ModalImage small={item.img} large={item.img} />
@@ -61,6 +75,15 @@ const Messagebox = ({ msgList }) => {
                       <span>
                         {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
                       </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="left-chatting">
+                    <div className="left-audio-msg">
+                      <audio controls src={item.audio}></audio>
+                    </div>
+                    <div className="left-chat-date">
+                      <span>an hour ago</span>
                     </div>
                   </div>
                 )}
