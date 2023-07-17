@@ -1,9 +1,10 @@
 import moment from "moment/moment";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import ModalImage from "react-modal-image";
+import { getDatabase, onValue, ref } from "firebase/database";
 
-const Messagebox = ({ msgList }) => {
+const Messagebox = ({ msgList, grpMsg, grpMemberLists }) => {
   const activeChat = useSelector((state) => state.active.activeState);
   const user = useSelector((users) => users.login.loggedIn);
   const scrollMsg = useRef(null);
@@ -11,6 +12,7 @@ const Messagebox = ({ msgList }) => {
   useEffect(() => {
     scrollMsg?.current?.scrollIntoView({ behavior: "smooth" });
   }, [msgList]);
+
   return (
     <>
       <div className="message-box">
@@ -89,7 +91,44 @@ const Messagebox = ({ msgList }) => {
                 )}
               </div>
             ))
-          : "grp"}
+          : user?.uid == activeChat?.adminid ||
+            grpMemberLists.includes(activeChat?.id + user.uid)
+          ? grpMsg.map((item, i) => (
+              <div key={i}>
+                {item.whosendid == user.uid
+                  ? item.whoreciveid == activeChat?.id && (
+                      <div className="right-chatting">
+                        <div className="right-msg">
+                          <p>{item.msg}</p>
+                        </div>
+                        <div className="right-chat-date">
+                          <span>Send by: {item.whosendname}</span>
+                        </div>
+                        <div className="right-chat-date">
+                          <span>
+                            {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                          </span>
+                        </div>
+                      </div>
+                    )
+                  : item.whoreciveid == activeChat?.id && (
+                      <div className="left-chatting">
+                        <div className="left-msg">
+                          <p>{item.msg}</p>
+                        </div>
+                        <div className="left-chat-date">
+                          <span>Send by:{item.whosendname}</span>
+                        </div>
+                        <div className="left-chat-date">
+                          <span>
+                            {moment(item.date, "YYYYMMDD hh:mm").fromNow()}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+              </div>
+            ))
+          : "vai tumi member na"}
         {/* <div className="right-chatting">
           <div className="right-msg">
             <p>

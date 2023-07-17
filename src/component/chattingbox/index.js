@@ -26,8 +26,10 @@ const Chattingbox = () => {
   const user = useSelector((users) => users.login.loggedIn);
   const [msg, setMsg] = useState("");
   const [openCam, setOpenCam] = useState(false);
+  const [grpMemberLists, setGrpMemberLists] = useState([]);
   const [msgList, setMsgList] = useState([]);
   const [captureImage, setCaptureImage] = useState("");
+  const [grpMsg, setGrpMsg] = useState([]);
   const [showEmoji, setShowEmoji] = useState(false);
   const [audionUrl, setAudioUrl] = useState("");
   const [audioBlob, setAudioBlob] = useState("");
@@ -47,7 +49,17 @@ const Chattingbox = () => {
         } - ${new Date().getDate()} - ${new Date().getHours()} - ${new Date().getMinutes()}`,
       });
     } else {
-      console.log("this is just for grp msg");
+      set(push(ref(db, "groupmsg")), {
+        whosendid: user.uid,
+        whosendname: user.displayName,
+        whoreciveid: activeChat?.id,
+        whorecivename: activeChat?.name,
+        adminid: activeChat?.adminid,
+        msg: msg,
+        date: `${new Date().getFullYear()} - ${
+          new Date().getMonth() + 1
+        } - ${new Date().getDate()} - ${new Date().getHours()} - ${new Date().getMinutes()}`,
+      });
     }
   };
 
@@ -56,6 +68,17 @@ const Chattingbox = () => {
       handleMsgSend();
     }
   };
+
+  useEffect(() => {
+    const starCountRef = ref(db, "groupmembers");
+    onValue(starCountRef, (snapshot) => {
+      let memberArr = [];
+      snapshot.forEach((item) => {
+        memberArr.push(item.val().groupid + item.val().userid);
+      });
+      setGrpMemberLists(memberArr);
+    });
+  }, []);
 
   useEffect(() => {
     const starCountRef = ref(db, "singleMsg");
@@ -72,6 +95,17 @@ const Chattingbox = () => {
         }
       });
       setMsgList(msgArr);
+    });
+  }, [activeChat?.id]);
+
+  useEffect(() => {
+    const starCountRef = ref(db, "groupmsg");
+    onValue(starCountRef, (snapshot) => {
+      let grpMsgArr = [];
+      snapshot.forEach((item) => {
+        grpMsgArr.push(item.val());
+      });
+      setGrpMsg(grpMsgArr);
     });
   }, [activeChat?.id]);
 
@@ -194,7 +228,11 @@ const Chattingbox = () => {
           </div>
         </div>
         <div className="msg-box">
-          <Messagebox msgList={msgList} />
+          <Messagebox
+            msgList={msgList}
+            grpMsg={grpMsg}
+            grpMemberLists={grpMemberLists}
+          />
         </div>
         <div className="bottom-msg-part">
           <div className="msg-input-box">
