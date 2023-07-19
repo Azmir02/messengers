@@ -17,9 +17,9 @@ const Sidebaricons = () => {
       <div className="profile_icons">
         <IoMdNotificationsOutline />
       </div>
-      <div className="profile_icons">
+      <NavLink to="/acountsetting" className="profile_icons">
         <BsFillGearFill />
-      </div>
+      </NavLink>
     </div>
   );
 };
