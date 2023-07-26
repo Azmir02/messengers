@@ -8,7 +8,7 @@
 .account_info_box {
   width: 500px;
   padding: 50px 45px;
-  background-color: var(--white);
+  background-color: var(--box-colors);
   box-shadow: 0px 24px 25px -7px rgba(0, 0, 0, 0.03);
 }
 
@@ -30,11 +30,18 @@
 }
 
 .update {
-  background-color: var(--primary-color) !important;
+  background-color: var(--setting-btn) !important;
   margin-top: 20px !important;
 }
 
 .theme_switch {
   display: flex;
   justify-content: flex-end;
+}
+
+.account-Form label {
+  color: var(--black-color) !important;
+}
+.account-Form input {
+  color: var(--black-color) !important;
 }

@@ -144,6 +144,13 @@ const Forms = () => {
             variant="standard"
             fullWidth
             margin="normal"
+            sx={{
+              " & .MuiInputBase-root": {
+                "& > input": {
+                  borderBottom: "1px solid var(--black-color)",
+                },
+              },
+            }}
           />
           {formik.errors.email && formik.touched.email && (
             <p className="signup__error">{formik.errors.email}</p>
@@ -159,6 +166,13 @@ const Forms = () => {
             variant="standard"
             fullWidth
             margin="normal"
+            sx={{
+              " & .MuiInputBase-root": {
+                "& > input": {
+                  borderBottom: "1px solid var(--black-color)",
+                },
+              },
+            }}
           />
           {formik.errors.fullname && formik.touched.fullname && (
             <p className="signup__error">{formik.errors.fullname}</p>
@@ -175,6 +189,13 @@ const Forms = () => {
               variant="standard"
               fullWidth
               margin="normal"
+              sx={{
+                " & .MuiInputBase-root": {
+                  "& > input": {
+                    borderBottom: "1px solid var(--black-color)",
+                  },
+                },
+              }}
             />
             <IconButton aria-label="" onClick={handleHideShow}>
               {passShow === "password" ? (
@@ -199,6 +220,13 @@ const Forms = () => {
               variant="standard"
               fullWidth
               margin="normal"
+              sx={{
+                " & .MuiInputBase-root": {
+                  "& > input": {
+                    borderBottom: "1px solid var(--black-color)",
+                  },
+                },
+              }}
             />
             <IconButton aria-label="" onClick={handleConfirmHideShow}>
               {confirmpassShow === "password" ? (

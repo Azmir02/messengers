@@ -72,6 +72,13 @@ const AccountForm = () => {
           value={formik.values.FullName}
           fullWidth
           margin="normal"
+          sx={{
+            " & .MuiInputBase-root": {
+              "& > input": {
+                borderBottom: "1px solid var(--black-color)",
+              },
+            },
+          }}
         />
         <TextField
           type="email"
@@ -85,6 +92,13 @@ const AccountForm = () => {
           fullWidth
           margin="normal"
           disabled
+          sx={{
+            " & .MuiInputBase-root": {
+              "& > input": {
+                borderBottom: "1px solid var(--black-color)",
+              },
+            },
+          }}
         />
         <TextField
           type="password"
@@ -97,6 +111,13 @@ const AccountForm = () => {
           value={formik.values.password}
           fullWidth
           margin="normal"
+          sx={{
+            " & .MuiInputBase-root": {
+              "& > input": {
+                borderBottom: "1px solid var(--black-color)",
+              },
+            },
+          }}
         />
         <Button variant="contained" type="submit" className="update">
           Update

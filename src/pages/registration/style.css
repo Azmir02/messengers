@@ -44,7 +44,7 @@ p.signin__text {
   font-family: var(--primary-font);
   font-size: 14px;
   font-weight: 400px;
-  color: var(--primary-color);
+  color: var(--black-color);
   text-align: center;
   margin-top: 35px;
 }
@@ -70,4 +70,11 @@ p.signup__error {
   position: absolute;
   top: 30%;
   right: 5px;
+}
+
+.signup__form label {
+  color: var(--black-color) !important;
+}
+.signup__form input {
+  color: var(--black-color) !important;
 }

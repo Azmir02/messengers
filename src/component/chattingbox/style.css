@@ -1,7 +1,7 @@
 .chatting-box {
   width: 100%;
   height: 95vh;
-  background-color: var(--white);
+  background-color: var(--box-colors);
   box-shadow: 0px -35px 61px rgba(0, 0, 0, 0.1);
   padding: 0 20px;
   box-sizing: border-box;
@@ -189,7 +189,7 @@
 }
 .inner-msg-input {
   width: 100%;
-  background-color: var(--searchbox_bg);
+  background-color: var(--input-msg);
   padding: 15px 20px;
   border-radius: 50px;
   display: flex;
@@ -204,6 +204,7 @@
   background-color: transparent;
   font-size: 16px;
   font-family: var(--primary-font);
+  color: var(--black-color);
 }
 
 .bottom-msg-part {
@@ -226,6 +227,7 @@
 .emoji svg {
   width: 28px;
   height: 28px;
+  fill: var(--black-color);
 }
 .attachement {
   width: 20px;
@@ -241,6 +243,10 @@
   height: 28px;
   cursor: pointer;
 }
+
+.attachement svg path {
+  fill: var(--black-color);
+}
 .camera {
   width: 20px;
   height: 40px;
@@ -253,6 +259,7 @@
 .camera svg {
   width: 28px;
   height: 28px;
+  fill: var(--black-color);
 }
 
 .msg-send-btn {
@@ -313,4 +320,5 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+  fill: var(--black-color);
 }

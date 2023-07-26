@@ -274,6 +274,13 @@ const Forms = () => {
             value={formik.values.email}
             fullWidth
             margin="normal"
+            sx={{
+              " & .MuiInputBase-root": {
+                "& > input": {
+                  borderBottom: "1px solid var(--black-color)",
+                },
+              },
+            }}
           />
 
           {formik.errors.email && formik.touched.email && (
@@ -292,6 +299,13 @@ const Forms = () => {
               value={formik.values.password}
               fullWidth
               margin="normal"
+              sx={{
+                " & .MuiInputBase-root": {
+                  "& > input": {
+                    borderBottom: "1px solid var(--black-color)",
+                  },
+                },
+              }}
             />
 
             <IconButton onClick={handleViewHide}>

@@ -45,7 +45,7 @@ p.signup__text {
   font-family: var(--primary-font);
   font-size: 14px;
   font-weight: 400px;
-  color: var(--primary-color);
+  color: var(--black-color);
   text-align: center;
   margin-top: 35px;
 }
@@ -62,6 +62,9 @@ p.login__error {
 .password__field {
   display: flex;
   position: relative;
+}
+.password__field button svg {
+  fill: var(--black-color);
 }
 .password__field input {
   position: relative;
@@ -106,6 +109,17 @@ p.login__error {
   font-family: var(--primary-font);
   font-size: 16px;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--black-color);
   padding-bottom: 8px;
+}
+
+.github__signin__btn svg {
+  fill: var(--black-color);
+}
+
+.login__form label {
+  color: var(--black-color) !important;
+}
+.login__form input {
+  color: var(--black-color) !important;
 }
