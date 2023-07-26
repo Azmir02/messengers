@@ -66,7 +66,7 @@ const AccountForm = () => {
           id="outlined-basic"
           name="FullName"
           label="Full Name"
-          variant="outlined"
+          variant="standard"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.FullName}
@@ -78,7 +78,7 @@ const AccountForm = () => {
           id="outlined-basic"
           name="email"
           label="Email"
-          variant="outlined"
+          variant="standard"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
@@ -91,7 +91,7 @@ const AccountForm = () => {
           id="outlined-basic"
           name="password"
           label="New Password"
-          variant="outlined"
+          variant="standard"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}

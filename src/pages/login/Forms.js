@@ -268,7 +268,7 @@ const Forms = () => {
             id="outlined-basic"
             name="email"
             label="Email Address"
-            variant="outlined"
+            variant="standard"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
@@ -286,7 +286,7 @@ const Forms = () => {
               id="outlined-basic"
               name="password"
               label="Password"
-              variant="outlined"
+              variant="standard"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}

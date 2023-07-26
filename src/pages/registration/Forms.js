@@ -141,7 +141,7 @@ const Forms = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            variant="outlined"
+            variant="standard"
             fullWidth
             margin="normal"
           />
@@ -156,7 +156,7 @@ const Forms = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.fullname}
-            variant="outlined"
+            variant="standard"
             fullWidth
             margin="normal"
           />
@@ -172,7 +172,7 @@ const Forms = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
-              variant="outlined"
+              variant="standard"
               fullWidth
               margin="normal"
             />
@@ -196,7 +196,7 @@ const Forms = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.confirm_password}
-              variant="outlined"
+              variant="standard"
               fullWidth
               margin="normal"
             />
